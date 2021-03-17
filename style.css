@@ -76,6 +76,7 @@ Background gradient:
     
     .container .leftSection .img-woman1{
         transform: translate(-90px, 0);
+        z-index: 2;
     }
     
     
@@ -83,11 +84,11 @@ Background gradient:
         position: fixed;
         transform: translate(-110px, 50px);
         width: 200px;
-        z-index: 1;
+        z-index: 3;
     }
     
     .container .leftSection .bgPattern1{
-        position: fixed;
+        position: absolute;
         transform: translate(-590px, -60px);
         z-index: 1;
     }
