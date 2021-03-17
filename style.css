@@ -1,0 +1,245 @@
+/* # Front-end Style Guide
+## Layout
+The designs were created to the following widths:
+- Mobile: 375px
+- Desktop: 1440px
+## Colors
+### Primary
+#### Text
+- Very dark desaturated blue: hsl(238, 29%, 16%)
+- Soft red: hsl(14, 88%, 65%)
+#### Gradient
+Background gradient:
+- Soft violet: hsl(273, 75%, 66%)
+- Soft blue: hsl(240, 73%, 65%)
+### Neutral
+#### Text
+- Very dark grayish blue: hsl(237, 12%, 33%)
+- Dark grayish blue: hsl(240, 6%, 50%)
+#### Dividers
+- Light grayish blue: hsl(240, 5%, 91%)
+## Typography
+### Body Copy
+- Font size: 12px
+### Font
+- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700 */
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+        min-height: 100vh;
+        font-family: 'Kumbh Sans', sans-serif;
+        z-index: 2;
+    }
+    
+    .container {
+        display: flex;
+        background-color: white;
+        justify-content: space-around;
+        align-items: center;
+        min-width: 900px;
+        min-height: 500px;
+        position: relative;
+        z-index: 2;
+        border-radius: 30px;
+        box-shadow:0 40px 5em rgba(8, 8, 8, 0.274);
+        overflow-y: hidden;
+    }
+    
+    .container .rightSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 300px;
+        min-height: 400px;
+        margin-right: 70px;
+    }
+    
+    
+    .container .leftSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+    }
+    
+    
+    .container .leftSection .img-woman1{
+        transform: translate(-90px, 0);
+    }
+    
+    
+    .container .leftSection .img-box1{
+        position: fixed;
+        transform: translate(-110px, 50px);
+        width: 200px;
+        z-index: 1;
+    }
+    
+    .container .leftSection .bgPattern1{
+        position: fixed;
+        transform: translate(-590px, -60px);
+        z-index: 1;
+    }
+
+    .container .leftSection .img-woman2, .bgPattern2 {
+        display: none;
+    }
+
+
+    
+    
+    .question {
+        display: flex;
+        justify-content: space-between;
+        color: hsl(237, 12%, 33%);
+        border-bottom: 1px solid hsl(240, 5%, 91%);
+        padding-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .question:hover {
+        color: hsl(14, 88%, 65%);
+        cursor: pointer;
+    }
+    
+    h1 {
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    
+    .answer1, .answer2, .answer3, .answer4, .answer5 {
+        display: none;
+        font-size: 12px;
+        color: hsl(240, 6%, 50%);
+    }
+    
+    .showItem {
+        display: block;
+        border-bottom: 1px solid hsl(240, 5%, 91%);
+        padding-bottom: 15px;
+        animation: answerAnimate .5s ease-in-out forwards;
+    }
+    
+    .activeQuestion {
+        font-weight: 700;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    @keyframes answerAnimate {
+        0%   {opacity: 0;}
+        100%  {opacity: 100%;}
+        }
+    
+    @keyframes arrowAnimate {
+    0%   {transform: rotate(0deg);}
+    100%  {transform: rotate(180deg);}
+    }
+    
+    .arrowAnimation { 
+        animation: arrowAnimate .5s ease-in-out forwards;
+    }
+
+
+
+@media screen and (max-width: 950px) {
+    
+    .container {
+        flex-direction: column;
+        min-height: 550px;
+        min-width: 300px;
+        margin-top: 100px;
+        align-items: center;
+    }
+
+    h1 {
+        align-self: center;
+    }
+    .container .rightSection {
+        width: 250px;
+        min-height: 400px;
+        margin: 0 30px 0 30px;
+        
+    }
+
+    .container .leftSection .img-woman2{
+        position: fixed;
+        transform: translate(-150px, -50px);
+        display: block;
+    }
+    
+    
+    .container .leftSection .bgPattern2{
+        position: fixed;
+        transform: translate(-122px, 10px);
+        z-index: 1;
+        display: block;
+    }
+
+    .container .leftSection .img-woman1, .bgPattern1, .img-box1 {
+        display: none;
+    }
+
+  }
+
+
+  
+  @media (max-width: 950px) and (orientation: landscape) {
+    
+    
+    .container {
+        flex-direction: row;
+        min-width: 600px;
+        min-height: 340px;
+        margin: 0;
+    }
+
+    
+    .container .rightSection {
+        width: 400px;
+        min-height: 100px;
+        margin: 0 0 0 70px;
+  }
+
+  h1 {
+      margin-bottom: 5px;
+  }
+
+  .question {
+    padding: 5px;
+  }
+
+  .showItem {
+      padding-bottom: 5px;
+  }
+
+    .container .leftSection .img-woman2{
+        position: fixed;
+        transform: translate(-150px, -10px);
+        display: block;
+    }
+    
+    
+    .container .leftSection .bgPattern2{
+        position: fixed;
+        transform: translate(-122px, 40px);
+        z-index: 1;
+        display: block;
+    }
+
+    .container .leftSection .img-woman1, .bgPattern1, .img-box1 {
+        display: none;
+    }
+  }
+
